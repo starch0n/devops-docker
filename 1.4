@@ -1,0 +1,17 @@
+docker run -d -it --name 1.4 ubuntu sh -c 'while true; do echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website; done'
+docker exec -it 1.4 bash
+apt-get update
+apt-get -y install curl
+
+docker attach 1.4
+helsinki.fi
+Searching..
+<html>
+<head><title>301 Moved Permanently</title></head>
+<body>
+<center><h1>301 Moved Permanently</h1></center>
+<hr><center>nginx/1.22.1</center>
+</body>
+</html>
+Input website:
+read escape sequence

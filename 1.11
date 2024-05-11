@@ -1,0 +1,13 @@
+# java 8 base
+FROM openjdk:8
+
+EXPOSE 8080
+
+WORKDIR /usr/srv/app
+
+COPY . .
+# Build projects
+RUN ./mvnw package
+
+# RUN
+CMD ["java", "-jar", "./target/docker-example-1.1.3.jar"]

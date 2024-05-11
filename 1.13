@@ -1,0 +1,15 @@
+FROM golang:latest
+
+WORKDIR /usr/src/app
+
+COPY . .
+
+EXPOSE 8080
+# Build project, generate 'server' file
+
+# environment variables
+ENV PORT 8080
+ENV REQUEST https://example.com
+
+# run server
+CMD ./server
